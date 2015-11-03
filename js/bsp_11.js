@@ -15,4 +15,10 @@ $(function () {
             this.submit();
         }
     });
+
+    $("a.box").on("click", function (event) {
+        event.preventDefault();
+        var infotext = $(this).attr("data-info");
+        alert(infotext);
+    });
 });

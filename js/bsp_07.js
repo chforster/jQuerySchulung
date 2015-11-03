@@ -45,7 +45,15 @@
 
     // $("h3").parent().css("border", "2px solid blue");
 
-    $("article").filter(":has(h3)").css("border", "2px solid blue");
+    $("article").filter(":has(h3)")
+        .css("border", "2px solid blue");
+
+    // Traversing Filter
+    // eq() filter() first() has() is() last() map() not() slice()
+
+    $("p").filter(function () {
+        return $("span", this).length === 1; // p beinhaltet EIN span
+    }).text("1 span ist drin");
 
 
 }(jQuery));

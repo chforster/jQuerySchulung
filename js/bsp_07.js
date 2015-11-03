@@ -51,9 +51,19 @@
     // Traversing Filter
     // eq() filter() first() has() is() last() map() not() slice()
 
+    // $("p").filter(function (index) - Index optional - beinhaltet die Position des Iterators
     $("p").filter(function () {
         return $("span", this).length === 1; // p beinhaltet EIN span
-    }).text("1 span ist drin");
+    })
+    //    .text("1 span ist drin")
+    ;
+
+    // find
+    $("p").find("span").css({
+        backgroundColor: "green"
+    }).end().css({ // end beendet die Auswahlt von find()
+        border : "3px solid green"
+    });
 
 
 }(jQuery));

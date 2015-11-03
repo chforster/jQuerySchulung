@@ -22,12 +22,12 @@
 jQuery(function ($) {
 
     "use strict";
-    var $h2,
+    var list = ["brot","Eier", "Milch"],
         $col1 = $("#col1").text("Neu");
-    $h2 = $("<h2></h2>", {
-        id: "feature-article",
-        text: "Inhalt"
-    });
+    //$h2 = $("<h2></h2>", {
+    //    id: "feature-article",
+    //    text: "Inhalt"
+    //});
     // $h2.appendTo($col1);
     // $col1.append($h2)
 
@@ -61,4 +61,11 @@ jQuery(function ($) {
         text: "insertAfter"
     }).insertAfter($col1);
 
+    list.forEach(function (el) {
+       $("<span></span>").text(el).appendTo("#liste");
+    });
+
+    $("#liste span")
+        .wrapAll("<ol></ol>")
+        .wrap("<li></li>");
 });

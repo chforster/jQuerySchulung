@@ -10,18 +10,32 @@ jQuery(function ($) {
 
     var shopSystem = {
 
-        clickElements : "button",
-        makeEvents : function () {
-            var that = this;
+        basket : [],
+        clickElements: {},
+        makeEvents : function (config) {
+            var that = this,
+                addItem = function (event) {
+                    console.dir(event);
+                    console.dir(this);
+                    console.log(that.clickElements);
 
-            // VIele Buttons
-            $(this.clickElements).on("click", function (event) {
-                console.dir(event); // Info zum Event
-                console.dir(this); // Der einzelne Button
-                console.log(that.clickElements); // vorheriger Context
+                    that.basket.push("Element");
+                    console.log(that.basket);
+
+                    $(this).off("click", addItem);
+                };
+
+            this.clickElements = config;
+
+            $(this.clickElements.addItem).one("click", function () {
+                alert("Wurde hinzugefügt. Den warenkorb finden sie unten");
             });
+            // VIele Buttons
+            $(this.clickElements.addItem).on("click", addItem);
         }
     };
 
-    shopSystem.makeEvents();
+    shopSystem.makeEvents({
+        addItem : "button"
+    });
 });

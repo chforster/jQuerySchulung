@@ -44,6 +44,17 @@ jQuery(function ($) {
                         });
 
                     break;
+                case "getscript":
+                    $.getScript("//code.jquery.com/color/jquery.color.js", function () {
+                        $box1.animate({
+                            backgroundColor: "rgb(100,100,100)",
+                            color: "white"
+                        }, 2000).animate({
+                            backgroundColor: "red",
+                            color: "black"
+                        }, 2000);
+                    });
+                    break;
 
             }
         }

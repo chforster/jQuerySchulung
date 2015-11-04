@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<personen>
+    <person>
+        <vorname>Peter</vorname>
+        <nachname>Schneider</nachname>
+        <personalid>4252352352</personalid>
+    </person>
+    <person>
+        <vorname>Christoph</vorname>
+        <nachname>Forster</nachname>
+        <personalid>949545</personalid>
+    </person>
+</personen>

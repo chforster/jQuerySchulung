@@ -56,6 +56,24 @@ jQuery(function ($) {
                     });
                     break;
 
+                case "getXML":
+                    $.ajax({
+                        url: "bsp_14_daten.xml",
+                        dataType: "xml" // wird eigentlich automatisch ermittelt
+                    }).done(function (daten) {
+                        var $vorname,
+                            $nachname,
+                            $singleDaten = $(daten).find("person");
+                        $singleDaten.each(function () {
+                            $vorname = $(this).find("vorname");
+                            $nachname = $(this).find("nachname");
+                            $("<li></li>").text($vorname.text() + " " + $nachname.text()).appendTo($box1);
+                            // hier fehlt noch der <ul> wrap
+                        });
+
+                    });
+                    break;
+
             }
         }
     });

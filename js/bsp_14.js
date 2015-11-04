@@ -6,7 +6,9 @@ jQuery(function ($) {
 
     var $box1 = $("#box1");
     $("#box2").on("click", function (event) {
-        var $target = $(event.target);
+        var jqXHR,
+            $form1,
+            $target = $(event.target);
         if ($target.is("button")) {
             switch ($target.attr("id")) {
                 case "load":
@@ -20,6 +22,26 @@ jQuery(function ($) {
                             console.log("Status OK");
                         });
                     });
+
+                    break;
+                case "post":
+
+                    jqXHR = $.post("bsp_14_ajax_snippet.html",
+                        {id: 35})
+                        .done(function () {
+                            console.log("ok");
+                        });
+
+                    break;
+                case "form1":
+                    event.preventDefault();
+                    $form1 = $("#anmeldung");
+                    jqXHR = $.post("bsp_14_ajax_snippet.html", $form1.serialize())
+                        .done(function () {
+                            var div = $form1.parent();
+                            div.empty().text($form1.serialize());
+                            console.log("ok");
+                        });
 
                     break;
 

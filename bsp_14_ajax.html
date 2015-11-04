@@ -17,7 +17,7 @@
             font-size: 1.4rem;
         }
 
-        #box1 {
+        #box1, #box3 {
             position: absolute;
             top: 0;
             left: 0;
@@ -40,6 +40,10 @@
             padding: 1rem;
         }
 
+        #box3 {
+            left: 30rem;
+        }
+
         #page {
             width: 96rem;
             height: 100%;
@@ -55,8 +59,17 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam aut debitis deleniti dolores dolorum, earum et
         exercitationem fugiat impedit in ipsa natus neque perferendis quae quidem quos reiciendis voluptate voluptatum.
     </div>
+    <div id="box3">
+        <form id="anmeldung" action="">
+            <input name="vorname" placeholder="Vorname" type="text"/>
+            <input name="email" placeholder="EMail" type="email"/>
+
+        </form>
+    </div>
     <div id="box2">
-        <button id="load">Daten holen</button>
+        <button id="load">load()</button>
+        <button id="post">post()</button>
+        <button id="form1" form="anmeldung">Absenden</button>
 
     </div>
 </div>

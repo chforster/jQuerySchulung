@@ -46,6 +46,19 @@ jQuery(function ($) {
                         });
 
                     break;
+                case "move":
+                    $box1
+                        .animate({
+                            top: "200px",
+                            left: "+=30"
+                        }, 1000)
+                        .animate({
+                            width: "+=100"
+                        }, {
+                            duration: 1000,
+                            queue: false
+                        });
+                    break;
             }
             }
         }

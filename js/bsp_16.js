@@ -3,5 +3,15 @@
  */
 $(function () {
     "use strict";
-    $("#art1").resizable();
+    var $art1 = $("#art1")
+    $art1
+        .resizable()
+        .draggable();
+
+    $("#art2").droppable({
+        drop: function (event, ui) {
+            $art1.text("Angedockt");
+            console.log(ui);
+        }
+    });
 });

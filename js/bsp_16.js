@@ -16,5 +16,12 @@ $(function () {
 
     });
 
-    $("#art3").tabs();
+    var tabs = $("#tabs").tabs();
+
+    tabs.find(".ui-tabs-nav").sortable({
+        axis: "x",
+        stop: function () {
+            tabs.tabs("refresh");
+        }
+    });
 });

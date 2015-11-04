@@ -13,5 +13,8 @@ $(function () {
             $art1.text("Angedockt");
             console.log(ui);
         }
+
     });
+
+    $("#art3").tabs();
 });

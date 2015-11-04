@@ -6,62 +6,62 @@ jQuery(function ($) {
 
     var $box1 = $("#box1");
     $("#box2").on("click", function (event) {
-        var $target = $(event.target);
-        if ($target.is("button")) {
-            switch ($target.attr("id")) {
-                case "toggle":
-                    // duration, Animation Style (linear or swing), function after finishment
-                    //$box1.toggle(800, "swing", function () {
-                    //    $target.css("backgroundColor", "pink");
-                    //});
+            var $target = $(event.target);
+            if ($target.is("button")) {
+                switch ($target.attr("id")) {
+                    case "toggle":
+                        // duration, Animation Style (linear or swing), function after finishment
+                        //$box1.toggle(800, "swing", function () {
+                        //    $target.css("backgroundColor", "pink");
+                        //});
 
-                    $box1.toggle({
-                        duration: 1000,
-                        complete: function () {
-                            $target.text("Toggle");
-                        },
-                        start: function () {
-                            $target.text("running...");
-                        }
-                    });
-                    break;
-                case "fadingAnimation":
-                    $box1
-                        .hide(500)
-                        .show(500)
-                        .fadeOut(500)
-                        .fadeIn(500)
-                        .fadeTo(1000, 0.3)
-                        .fadeTo(100, 1);
-                    break;
-                case "fadeToggle":
-                    $box1.fadeToggle();
-                    break;
-                case "slide":
-                    $box1
-                        .fadeOut(2000)
-                        .slideUp({
-                            duration: 2000,
-                            queue: false
-                        });
-
-                    break;
-                case "move":
-                    $box1
-                        .animate({
-                            top: "200px",
-                            left: "+=30"
-                        }, 1000)
-                        .animate({
-                            width: "+=100"
-                        }, {
+                        $box1.toggle({
                             duration: 1000,
-                            queue: false
+                            complete: function () {
+                                $target.text("Toggle");
+                            },
+                            start: function () {
+                                $target.text("running...");
+                            }
                         });
-                    break;
-            }
+                        break;
+                    case "fadingAnimation":
+                        $box1
+                            .hide(500)
+                            .show(500)
+                            .fadeOut(500)
+                            .fadeIn(500)
+                            .fadeTo(1000, 0.3)
+                            .fadeTo(100, 1);
+                        break;
+                    case "fadeToggle":
+                        $box1.fadeToggle();
+                        break;
+                    case "slide":
+                        $box1
+                            .fadeOut(2000)
+                            .slideUp({
+                                duration: 2000,
+                                queue: false
+                            });
+
+                        break;
+                    case "move":
+                        $box1
+                            .animate({
+                                top: "200px",
+                                left: "+=30"
+                            }, 1000)
+                            .animate({
+                                width: "+=100"
+                            }, {
+                                duration: 1000,
+                                queue: false
+                            });
+                        break;
+                }
             }
         }
     )
     ;
-    });
+});

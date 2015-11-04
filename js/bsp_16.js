@@ -24,4 +24,8 @@ $(function () {
             tabs.tabs("refresh");
         }
     });
+
+    $("#btn1").click(function (event) {
+        $(this).effect("bounce").effect("puff").effect("explode");
+    });
 });

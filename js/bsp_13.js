@@ -37,7 +37,18 @@ jQuery(function ($) {
                 case "fadeToggle":
                     $box1.fadeToggle();
                     break;
+                case "slide":
+                    $box1
+                        .fadeOut(2000)
+                        .slideUp({
+                            duration: 2000,
+                            queue: false
+                        });
+
+                    break;
+            }
             }
         }
+    )
+    ;
     });
-});
